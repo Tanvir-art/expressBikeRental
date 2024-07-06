@@ -15,7 +15,7 @@ Make sure you have Node.js installed. You can download it from [here](https://no
 1. Clone the repository to your local machine:
 
     ```sh
-    git clone https://github.com/Tanvir-art/mongooseEcom
+     https://github.com/Tanvir-art/expressBikeRental.git
     ```
 
 2. Navigate to the project directory:
