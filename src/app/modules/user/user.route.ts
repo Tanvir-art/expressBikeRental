@@ -20,6 +20,15 @@ router.post(
   UserController.loginUser,
 );
 
+router.get('/all', auth(USER_ROLE.admin), UserController.getAllUser);
+router.delete('/:id', auth(USER_ROLE.admin), UserController.deleteUser);
+router.put(
+  '/users/:id',
+  auth(USER_ROLE.admin),
+  validateRequest(UserValidation.userUpdateByAdminSchema),
+  UserController.updateUserDataByAdmin,
+);
+
 router.get(
   '/users/me',
   auth(USER_ROLE.admin, USER_ROLE.user),

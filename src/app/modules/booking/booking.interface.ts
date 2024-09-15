@@ -7,4 +7,6 @@ export type Booking = {
   endTime: Date;
   totalCost: number;
   isReturned: boolean;
+  discount?: number;
+  paymentStatus: 'unpaid' | 'paid';
 };

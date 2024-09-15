@@ -7,6 +7,8 @@ const bookingSchema = new Schema({
   returnTime: { type: Date, default: null },
   totalCost: { type: Number, default: 0 },
   isReturned: { type: Boolean, default: false },
+  discount: { type: Number, default: 0 },
+  paymentStatus: { type: String, enum: ['unpaid', 'paid'], default: 'unpaid' },
 });
 
 export const bookingModel = model('Booking', bookingSchema);

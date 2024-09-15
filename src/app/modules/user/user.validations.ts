@@ -23,9 +23,9 @@ const userValidationSchema = z.object({
       required_error: 'address is required',
       invalid_type_error: 'address must be string',
     }),
-    role: z.enum(['admin', 'user'], {
-      required_error: 'role is required',
-    }),
+    // role: z.enum(['admin', 'user'], {
+    //   required_error: 'role is required',
+    // }),
   }),
 });
 
@@ -66,8 +66,39 @@ const updateUserSchema = z.object({
       .optional(),
   }),
 });
+
+const userUpdateByAdminSchema = z.object({
+  body: z.object({
+    name: z
+      .string({
+        invalid_type_error: 'name must be string',
+      })
+      .optional(),
+    email: z
+      .string({
+        invalid_type_error: 'email must be string',
+      })
+      .optional(),
+    phone: z
+      .string({
+        invalid_type_error: 'phone must be string',
+      })
+      .optional(),
+    address: z
+      .string({
+        invalid_type_error: 'address must be string',
+      })
+      .optional(),
+    role: z
+      .enum(['admin', 'user'], {
+        invalid_type_error: 'role must be string',
+      })
+      .optional(),
+  }),
+});
 export const UserValidation = {
   userValidationSchema,
   loginSchema,
   updateUserSchema,
+  userUpdateByAdminSchema,
 };

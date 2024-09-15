@@ -4,5 +4,5 @@ export type User = {
   password: string;
   phone: string;
   address: string;
-  role: 'admin' | 'user';
+  role?: 'admin' | 'user';
 };
